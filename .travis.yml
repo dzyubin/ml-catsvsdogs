@@ -1,0 +1,13 @@
+language: python
+dist: xenial
+before_install:
+  - cd ./app
+install:
+  - pip install -r requirements.txt
+script:
+  - pytest
+deploy:
+  - provider: heroku
+    api_key:
+      secure: PnuY483HUi1b9taknUjRV+YVKox61wVUBeilGcCo6zjZyq4vxzjZvLwEzJpG138zMaNuiNiVoz3733SBU6xj7IFqIoS/c0XUKF/msnT0V0XhvQnZ2FbJj5JxQAjLMLmBWidS/h/6Q9+7kbcZebcxHS1CCeOUkwDiLDidM8iYNlVEMuXM38wgMbQRFykFw4qR37mpoph/t90VsB9+HohvH/ozQclUCHM8kzQw75C/Rst6Cvte/2v50CffdKYIs5S/XdJWKOKDvvP4Ic8+pf88+uBui4fYl0fDdoJMi8XiQxINBF5MESRDq5dTF/bMPNhTmv0eQtEG1b9z04BBJJRxQG5Aq5q8tWbVEocUXkg0fU6Y21lkRhf46g04GPLTYeI+2XM6yEtdaa/hYBuJPu4DorcFROQSGejc+zPwXsBhSQHIsDLisX8kIA1LhKc0IoilLgBWXFYjIWDTz6XrpNkCCA7kleLaGRH03iVy7zlM3EcaYfRDrTtCPAsokidMXfbCfy6t5K6twcLlZO8+UwqpOP0TtCKykbNmEex4wrB7esEulz16y4LmXEnh1aPhxzXTQUbnpyUWAvpbut/DfYBJ8sQAhVAhHB4jJlqTXHLDf4ViRRi/6+iJ93mI+lPIzzoaY9/osVuumJBjeYJ57JYghd01AutB4BaKJU8i/u2jofg=
+    app: ml-deploy-naive-bayes
